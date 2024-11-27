@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/assets/Minercraftory.ttf');
+    font-weight: normal;
+    font-style: normal;
+}  
+
+button {
+    transition: .2s;
+}
+
+/* Classes */
+.anim-sections {
+    transition: .1s ease-in-out;
+}
