@@ -1,4 +1,4 @@
-import OreUiTooltip from "../../oreui/Tooltip";
+import OreUiTooltip from "../oreui/Tooltip";
 
 export default function SectionButton({ img, tooltip }: { img: string, tooltip: string }) {
   return (
