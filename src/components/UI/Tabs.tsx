@@ -1,4 +1,5 @@
 import { OreUITabs } from "../OreUI"
+import { Client, Server } from "../Sections"
 
 export default function Tabs() {
   return (
@@ -8,8 +9,8 @@ export default function Tabs() {
       <OreUITabs
         initialTab={0}
         tabs={[
-          { image: "/assets/sections/client.png", content: <div>Client Section</div> },
-          { image: "/assets/sections/server.png", content: <div>Server Section</div> },
+          { image: "/assets/sections/client.png", content: <Client /> },
+          { image: "/assets/sections/server.png", content: <Server /> },
         ]}
         ContentWrapper="#MainView"
       />

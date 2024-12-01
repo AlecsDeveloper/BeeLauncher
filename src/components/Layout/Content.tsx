@@ -1,5 +1,4 @@
-import { Tabs } from "../UI"
-import MainView from "../UI/MainView"
+import { Tabs, MainView } from "../UI"
 
 export default function Content() {
   return (
