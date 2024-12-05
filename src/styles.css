@@ -13,3 +13,10 @@
 .anim-sections {
     transition: .1s;
 }
+
+/* Tab content scroll */
+#tabContent { overflow: auto; } 
+#tabContent::-webkit-scrollbar { width: 0px; } 
+#tabContent::-webkit-scrollbar-thumb { background-color: #363636AA; background-size: cover; } 
+#tabContent::-webkit-scrollbar-track { background-color: #f1f1f159; } 
+#tabContent:hover::-webkit-scrollbar { width: 6px; }

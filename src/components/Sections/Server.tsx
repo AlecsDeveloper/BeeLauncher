@@ -1,9 +1,9 @@
-import { OreUISection } from "../OreUI"
+import {  OreUIContainer } from "../OreUI"
 
 export default function Server() {
   return (
-    <OreUISection className="text-white">
-      <header className="font-minecraft text-2xl">Server Section!</header>
-    </OreUISection>
+    <OreUIContainer className="w-full h-full border-l-0 text-white" id="tabContent">
+        <header className="text-2xl font-minecraft">Server Section!</header>
+      </OreUIContainer>
   )
 }

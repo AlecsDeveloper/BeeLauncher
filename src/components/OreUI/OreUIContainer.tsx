@@ -5,20 +5,22 @@ interface OreUIContainerProps {
   style?: CSSProperties;
   className?: string;
   id?: string
+  center?: boolean
   children?: ReactNode
 }
 
-const OreUIContainer: React.FC<OreUIContainerProps> = ({ children, content, style, className, id }) => {
+const OreUIContainer: React.FC<OreUIContainerProps> = ({ children, content, style, className, id, center}) => {
   return (
-    <div 
-      className={`oreui-container bg-oreui-charcoal-darker border-[3px] border-black ${className}`} 
+    <div
+      className={`oreui-container bg-oreui-charcoal-darker border-[3px] border-black ${className || ''}`}
       style={style}
       id={id}
     >
-      {content ? content : ''}
-      {children ? children : ''}
+      {content && content}
+      {children && <div className={`p-2 ${center ? 'flex items-center' : ''}`}>{children}</div>}
     </div>
   );
 };
+
 
 export default OreUIContainer;

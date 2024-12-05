@@ -8,8 +8,8 @@ interface OreUISectionProps {
 
 const OreUISection: React.FC<OreUISectionProps> = ({ children, className = "", style = {} }) => {
   return (
-    <div className="w-full f-full">
-      <div className={`p-2 ${className}`} style={style}>{children}</div>
+    <div className="w-full h-full">
+      <div className={`${className}`} style={style}>{children}</div>
     </div>
   );
 };

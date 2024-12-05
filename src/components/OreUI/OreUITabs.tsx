@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 interface OreUITabsProps {
@@ -9,21 +9,22 @@ interface OreUITabsProps {
 
 export default function OreUITabs({ initialTab = 0, tabs, ContentWrapper }: OreUITabsProps) {
   const [activeTab, setActiveTab] = useState(initialTab);
+  const rootRef = useRef<ReturnType<typeof createRoot> | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const container = document.querySelector(ContentWrapper);
-    if (!container) return;
+    if (!container) {
+      console.error(`No container found for selector: ${ContentWrapper}`);
+      return;
+    }
 
-    container.innerHTML = "";
+    if (!rootRef.current) {
+      rootRef.current = createRoot(container);
+    }
 
     const activeContent = tabs[activeTab]?.content;
-    if (activeContent) {
-      const tempDiv = document.createElement("div");
-      container.appendChild(tempDiv);
+    rootRef.current.render(activeContent);
 
-      const root = createRoot(tempDiv);
-      root.render(activeContent);
-    }
   }, [activeTab, ContentWrapper, tabs]);
 
   return (
